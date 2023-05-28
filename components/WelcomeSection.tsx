@@ -34,7 +34,7 @@ const WelcomeSection = forwardRef<HTMLDivElement, ComponentDefaultProps>(
               letterSpacing={'tight'}
             >
               <MovingLetters delay={300}>Hi,</MovingLetters>
-              <MovingLetters delay={800}>Diep Tran,</MovingLetters>
+              <MovingLetters delay={800}>I'm Diep,</MovingLetters>
               <MovingLetters delay={1800}>Software Engineer</MovingLetters>
             </Box>
             <HtmlTag>/h</HtmlTag>
