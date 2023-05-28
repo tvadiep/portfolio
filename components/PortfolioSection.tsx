@@ -54,10 +54,7 @@ const PortfolioSection = forwardRef<HTMLDivElement, ComponentDefaultProps>(
                   fontSize={{ base: 'md', md: 'lg' }}
                   fontWeight={'medium'}
                 >
-                  We work with small, medium and large businesses. We also fund
-                  schools, hospitals, roads and other infrastructure essential
-                  to our communities and livelihoods. We do this in a way
-                  that&apos;s responsible, inclusive and innovative.
+                  We collaborated as a platform team to handle miniapps for the other teams throughout the entire bank. Additionally, we have created an ecosystem that includes JS tool libraries, app generators, UI libraries for both React and React Native, etc.
                 </Text>
                 <HtmlTag>/p</HtmlTag>
               </Box>

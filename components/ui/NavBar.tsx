@@ -102,13 +102,14 @@ const NavBarContent = ({
             Logo
           </Text> */}
           <AspectRatio w={'32px'} ratio={1}>
-            <Image
-              cursor={'pointer'}
-              objectFit={'cover'}
-              src='favicon.ico'
-              alt='logo'
-              onClick={() => onNavigate(navItems[0])}
-            />
+              <Image
+                borderRadius='full'
+                cursor={'pointer'}
+                objectFit={'cover'}
+                src='favicon.ico'
+                alt='logo'
+                onClick={() => onNavigate(navItems[0])}
+              />
           </AspectRatio>
         </Flex>
 
