@@ -7,40 +7,40 @@ import {
   SimpleGrid,
   Text,
   useDisclosure,
-} from '@chakra-ui/react'
-import { forwardRef, useState } from 'react'
-import { RECENT_PROJECTS } from '../data/projects'
-import { ProjectProps } from '../types'
+} from "@chakra-ui/react";
+import { forwardRef, useState } from "react";
+import { RECENT_PROJECTS } from "../data/projects";
+import { ProjectProps } from "../types";
 import {
   GridLoadingAnimation,
   HoverAnimation,
   MovingLetters,
-} from './animations'
-import { HtmlTag, PreviewImage } from './ui'
+} from "./animations";
+import { HtmlTag, PreviewImage } from "./ui";
 
 const PortfolioSection = forwardRef<HTMLDivElement, ComponentDefaultProps>(
   ({ ...rest }, ref) => {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const [selectedProject, setSelectedProject] = useState<ProjectProps>()
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const [selectedProject, setSelectedProject] = useState<ProjectProps>();
 
     const previewProject = (project: ProjectProps) => {
-      setSelectedProject(project)
-      onOpen()
-    }
+      setSelectedProject(project);
+      onOpen();
+    };
 
     return (
       <>
-        <Flex ref={ref} direction={'column'} {...rest}>
-          <Flex direction={{ base: 'column', md: 'row' }}>
+        <Flex ref={ref} direction={"column"} {...rest}>
+          <Flex direction={{ base: "column", md: "row" }}>
             <Box flex={3}>
               <Box>
                 <HtmlTag>h2</HtmlTag>
                 <MovingLetters
                   mx={5}
-                  fontSize={{ base: '3xl', sm: '4xl', md: '5xl' }}
-                  lineHeight={'normal'}
-                  fontWeight={'bold'}
-                  letterSpacing={'tight'}
+                  fontSize={{ base: "3xl", sm: "4xl", md: "5xl" }}
+                  lineHeight={"normal"}
+                  fontWeight={"bold"}
+                  letterSpacing={"tight"}
                 >
                   Recent work
                 </MovingLetters>
@@ -51,10 +51,13 @@ const PortfolioSection = forwardRef<HTMLDivElement, ComponentDefaultProps>(
                 <HtmlTag>p</HtmlTag>
                 <Text
                   mx={5}
-                  fontSize={{ base: 'md', md: 'lg' }}
-                  fontWeight={'medium'}
+                  fontSize={{ base: "md", md: "lg" }}
+                  fontWeight={"medium"}
                 >
-                  We collaborated as a platform team to handle miniapps for the other teams throughout the entire bank. Additionally, we have created an ecosystem that includes JS tool libraries, app generators, UI libraries for both React and React Native, etc.
+                  We collaborated as a platform team to handle miniapps for the
+                  other teams throughout the entire bank. Additionally, we have
+                  created an ecosystem that includes JS tool libraries, app
+                  generators, UI libraries for both React and React Native, etc.
                 </Text>
                 <HtmlTag>/p</HtmlTag>
               </Box>
@@ -71,18 +74,18 @@ const PortfolioSection = forwardRef<HTMLDivElement, ComponentDefaultProps>(
                   <GridLoadingAnimation
                     delay={Math.random() * RECENT_PROJECTS.length * 50}
                     display={{
-                      md: index === 9 ? 'none' : 'initial',
-                      lg: 'initial',
+                      md: index === 9 ? "none" : "initial",
+                      lg: "initial",
                     }}
                   >
                     <AspectRatio ratio={4 / 3} opacity={0}>
                       <Image
-                        objectFit={'cover'}
+                        objectFit={"cover"}
                         src={project.thumbnailUrl}
                         alt={project.alt}
                         onClick={() => previewProject(project)}
-                        cursor={'pointer'}
-                        loading={'lazy'}
+                        cursor={"pointer"}
+                        loading={"lazy"}
                       />
                     </AspectRatio>
                   </GridLoadingAnimation>
@@ -101,9 +104,9 @@ const PortfolioSection = forwardRef<HTMLDivElement, ComponentDefaultProps>(
           />
         )}
       </>
-    )
+    );
   }
-)
-PortfolioSection.displayName = 'Portfolio Section'
+);
+PortfolioSection.displayName = "Portfolio Section";
 
-export { PortfolioSection }
+export { PortfolioSection };
